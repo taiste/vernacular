@@ -91,7 +91,7 @@ namespace Vernacular
 
             var id = GetResourceId(ResourceIdType.ComprehensibleIdentifier,
                 context, message, gender, cached_string.PluralOrder);
-            var field = reflection_type.GetField(id);
+            var field = reflection_type.GetTypeInfo().GetDeclaredField(id);
             if (field == null)
             {
                 if (gender != LanguageGender.Neutral)
